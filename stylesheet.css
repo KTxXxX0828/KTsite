@@ -38,6 +38,72 @@ box-shadow: 0 12px 6px rgb(0 0 0 / 75%);
   color: rgb(255, 255, 255);
 }
 
+* {
+  box-sizing: border-box;
+}
+button,
+summary {
+  cursor: pointer;
+}
+button {
+  border: none;
+}
+summary {
+  list-style: none;
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.Accordion {
+  margin: 20px;
+  border: 2px solid #ccf;
+}
+
+.Accordion__Summary {
+  width: 100%;
+  font-size: 18px;
+  position: relative;
+  padding: 20px;
+  background-color: #ccf;
+  color: #33c;
+  text-align: left;
+  
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 16px;
+    height: 2px;
+    content: "";
+    background-color: currentColor;
+    right: 30px;
+  }
+  &::before {
+    transform: translateY(-50%);
+  }
+  &::after {
+    transition: transform 0.5s;
+    transform: translateY(-50%) rotate(-90deg);
+  }
+  &[aria-expanded="true"]::after {
+    transform: translateY(-50%);
+  }
+  .Accordion[open]:not([data-accordion-before-close]) &::after {
+    transform: translateY(-50%);
+  }
+}
+
+
+.Accordion__Content {
+  overflow: hidden;
+  
+  > p {
+    padding: 20px;
+  }
+}
+
 .header-title2 {
   position: absolute;
   top:55%;

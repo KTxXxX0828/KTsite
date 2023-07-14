@@ -38,6 +38,11 @@ box-shadow: 0 12px 6px rgb(0 0 0 / 75%);
   color: rgb(255, 255, 255);
 }
 
+.rotated {
+  transform: rotate(45deg); /* rotateZ(45deg) と等価 */
+  background-color: pink;
+}
+
 * {
   box-sizing: border-box;
 }

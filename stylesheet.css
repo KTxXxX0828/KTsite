@@ -407,6 +407,7 @@ header {
   font-size: 100%;
   font-weight: bold;
   display: inline-block;
+  color: #fffffff;
 }
 @keyframes example4{
   100% { background-position: 200%; }

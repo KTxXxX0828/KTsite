@@ -17,9 +17,29 @@ background-repeat: no-repeat;
 box-shadow: 0 12px 6px rgb(0 0 0 / 75%);
 }
 
+
+
+.Lisence {
+  background-color: #313131;
+  font-size: 30px;
+  position: absolute;
+  top:auto;
+  left:50%;
+  color: #FFFFFF;
+}
+
 .icon{
   width: 10px;
   height: 10px;
+}
+
+.fade {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 1.5s, transform 1s;
+}.fade.active {
+	opacity: 1;
+	transform: translateY(0px);
 }
 
 .header-title {
@@ -36,77 +56,6 @@ box-shadow: 0 12px 6px rgb(0 0 0 / 75%);
 .title4 {
   font-size:20px;
   color: rgb(255, 255, 255);
-}
-
-.rotated {
-  transform: rotate(45deg); /* rotateZ(45deg) と等価 */
-  background-color: pink;
-}
-
-* {
-  box-sizing: border-box;
-}
-button,
-summary {
-  cursor: pointer;
-}
-button {
-  border: none;
-}
-summary {
-  list-style: none;
-  &::-webkit-details-marker {
-    display: none;
-  }
-}
-
-.Accordion {
-  margin: 20px;
-  border: 2px solid #ccf;
-}
-
-.Accordion__Summary {
-  width: 100%;
-  font-size: 18px;
-  position: relative;
-  padding: 20px;
-  background-color: #ccf;
-  color: #33c;
-  text-align: left;
-  
-  &::before,
-  &::after {
-    position: absolute;
-    top: 50%;
-    display: block;
-    width: 16px;
-    height: 2px;
-    content: "";
-    background-color: currentColor;
-    right: 30px;
-  }
-  &::before {
-    transform: translateY(-50%);
-  }
-  &::after {
-    transition: transform 0.5s;
-    transform: translateY(-50%) rotate(-90deg);
-  }
-  &[aria-expanded="true"]::after {
-    transform: translateY(-50%);
-  }
-  .Accordion[open]:not([data-accordion-before-close]) &::after {
-    transform: translateY(-50%);
-  }
-}
-
-
-.Accordion__Content {
-  overflow: hidden;
-  
-  > p {
-    padding: 20px;
-  }
 }
 
 .header-title2 {
@@ -151,7 +100,7 @@ color: whitesmoke;
 }
 ::-webkit-scrollbar-thumb{
   background-color: #600060;
-  border-radius: 2px;
+  border-radius: 4545px;
 }
 
 * {
@@ -275,14 +224,12 @@ a {
 
 .youtube {
   background-color: #ff0000;
-  font-family: minecraftia;
   transition: all 0.5s;
   cursor: default;
 }
 
 .discord {
   background-color: #0077ff;
-  font-family: minecraftia;
   transition: all 0.5s;
   cursor: default;
 }
@@ -294,22 +241,73 @@ a {
   cursor: default;
 }
 
-.sonota {
+.bruh {
   background-color: #505050;
   transition: all 0.5s;
   cursor: default;
 }
-.btn {
+.b {
   padding: 8px 24px;
   color: white;
-  display: -webkit-inline-box;
-  font-family: minecraftia;
+  display: -webkit-box;
   opacity: 0.8;
   border-radius: 2px;
   transition: all 0.5s;
   text-align: center;
-  box-shadow: 0 12px 6px rgb(0 0 0 / 75%);
-  font-family: "Orbitron";
+}
+
+.details {
+  color: #ffffff;
+  background-color: #363636;
+  border-radius: 10px;
+  box-shadow: rgb(0, 0, 0);
+  line-height: 2;
+  border: 1px solid #b9f9b200;
+  width: 80%;
+  margin: 0 auto 5px;
+  &__summary {
+    position: relative;
+    display: block;
+    background: #F3FFF3;
+    cursor: default;
+    margin: 0;
+    padding: 10px 40px 10px 16px;
+    &::-webkit-details-marker {
+      display: none;
+    }
+    &::before {
+      display: block;
+      content: "";
+      box-sizing: border-box;
+      position: absolute;
+      top: calc(50% - 6px);
+      right: 16px;
+      width: 6px;
+      height: 6px;
+      border: 6px solid transparent;
+      border-left: 6px solid #45239c00;
+      transition: all 0.4s ease-out;
+      transform-origin: 3px 6px;
+      transform: rotate(90deg);
+      .details[open] & {
+        transform: rotate(-90deg);
+        animation-duration: 12ms;
+      }
+    }
+  }
+  &__content {
+    overflow: hidden;
+    margin: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    > * {
+      margin: 0;
+      padding-top: 16px;
+      &:last-child {
+        padding-bottom: 16px;
+      }
+    }
+  }
 }
 
 span.ripple {
@@ -331,6 +329,23 @@ span.ripple {
   opacity: 1;
 }
 
+.Background {
+  margin-top: 5px;
+  background-color: #313131;
+}
+
+.space {
+  height: 100px;
+  display: block;
+}
+
+.Produce1 {
+  position: absolute;
+  left: 30%;
+  font-size:30px;
+  color: rgb(255, 255, 255);
+}
+
 .fa {
   margin-right: 5px;
 }
@@ -339,10 +354,13 @@ header {
   height: 65px;
   width: 100%;
   font-family: minecraftia;
-  background-color: rgb(32, 32, 32);
   position :fixed;
   top: 0;
   z-index: 10;
+}
+
+.BRU {
+  backdrop-filter: blur(50px);
 }
 
 .header2 {
@@ -407,7 +425,6 @@ header {
   font-size: 100%;
   font-weight: bold;
   display: inline-block;
-  color: #fffffff;
 }
 @keyframes example4{
   100% { background-position: 200%; }
@@ -428,9 +445,9 @@ header {
 }
 
 .KTsite {
-  background: linear-gradient(to right,#ffffff,#000000,#ffffff,#000000,#ffffff,#000000,#ffffff,#ffffff) 0 / 200%;
+  background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783,#e60000) 0 / 200%;
   height: 100%;
-  animation: 5s example4 linear infinite;
+  animation: 2s example4 linear infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 100%;
@@ -720,4 +737,3 @@ body {
     width: 100%;
   }
 }
-

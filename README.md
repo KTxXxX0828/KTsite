@@ -1,6 +1,4 @@
 # KTsite
-MY trash siteeeeeeeeeeee
-<br>
-this site is trash:(
+I will put many files on this site
 <br>
 <h3>Made By KT :)
